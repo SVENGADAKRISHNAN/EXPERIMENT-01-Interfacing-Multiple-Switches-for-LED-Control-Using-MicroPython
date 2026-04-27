@@ -134,31 +134,37 @@ while True:
 
 
 from machine import Pin
-import time import sleep 
-switch1=Pin(2,Pin.IN)
-switch2=Pin(3,Pin.IN)
-led1=Pin(13,Pin.OUT)
-led2=Pin(16,Pin.OUT)
+from time import sleep
+
+switch1 = Pin(2, Pin.IN, Pin.PULL_DOWN)
+switch2 = Pin(28, Pin.IN, Pin.PULL_DOWN)
+
+led1 = Pin(13, Pin.OUT)
+led2 = Pin(18, Pin.OUT)
+
+prev = None
+
+print("AND Gate Started\n")
+
 while True:
-    sw1_state=switch1.value()
-    sw2_state=switch2.value()
-    print("Switch 1 State", sw1_state)
-    print("Switch 2 State", sw2_state)
-    led1.value(0)
-    if sw1_state==1 and sw2_state==1:
-        led1.value(0)
-        led2.value(0)
-    elif sw1_state==1:
-        led1.value(1)
-        sleep(0.5)
-        led1.value(0)
-        led2.value(0)
-    elif sw2_state==1:
-        led1.value(0)
-        led2.value(1)
-        sleep(0.5)
-        led2.value(0)
-    sleep(0.5)
+    s1 = switch1.value()
+    s2 = switch2.value()
+
+    result = s1 and s2
+
+    led1.value(result)
+    led2.value(result)
+
+    state = (s1, s2, result)
+
+    if state != prev:
+        print(
+            f"S1: {s1} | S2: {s2} | OUT: {result} -> "
+            f"{'ON' if result else 'OFF'}"
+        )
+        prev = state
+
+    sleep(0.05)
 
  ```
 
@@ -203,13 +209,25 @@ while True:
 ## FIGURE-07: CIRCUIT CONNECTION
 
 
+<img width="401" height="366" alt="image" src="https://github.com/user-attachments/assets/f4a90b7a-5454-4a5f-b78c-41bd69d6b3fc" />
+
 
 ## FIGURE-08: CODE EXECUTION OUTPUT
 
 
+<img width="358" height="192" alt="image" src="https://github.com/user-attachments/assets/62393740-929e-4291-9ce1-78be932865e2" />
+
 
 ## FIGURE-09: LED STATUS BASED ON SWITCH INPUTS
 
+<img width="534" height="467" alt="image" src="https://github.com/user-attachments/assets/2d4b29a9-b2b5-4071-bf7b-bf493e3d514d" />
+
+<img width="556" height="500" alt="image" src="https://github.com/user-attachments/assets/1794b5fe-ddcb-4e55-a409-cba1770c991f" />
+
+
+<img width="567" height="486" alt="image" src="https://github.com/user-attachments/assets/dac98497-d71a-4533-a062-4f1e16e09a19" />
+
+<img width="566" height="561" alt="image" src="https://github.com/user-attachments/assets/dea50fae-4916-40e8-a311-0c2b266e7594" />
 
 ## RESULTS
 
