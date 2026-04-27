@@ -90,7 +90,7 @@ For communication, I2C (SDA, SCL), SPI (MOSI, MISO, SCK), and UART (TX, RX) inte
 4. Connect the other terminals of the switches to GND.
 
 ## PROGRAM (MicroPython)
-''''
+```
 
 ## Experiment 1A:
 
@@ -160,7 +160,7 @@ while True:
         led2.value(0)
     sleep(0.5)
 
- 
+ ```
 
 ## OUTPUT
 
@@ -171,13 +171,30 @@ while True:
 
 ## FIGURE-04: CIRCUIT CONNECTION
 
+<img width="1107" height="605" alt="Screenshot 2026-04-21 134753" src="https://github.com/user-attachments/assets/7af6c44a-9656-4782-a6e8-7f132588b16e" />
 
 
 ## FIGURE-05: CODE EXECUTION OUTPUT
 
 
+<img width="990" height="819" alt="Screenshot 2026-04-21 135155" src="https://github.com/user-attachments/assets/7a5b0c94-92c3-4314-8932-fb2de1079a1c" />
+
 
 ## FIGURE-06: LED AND BUZZER STATUS
+
+
+<img width="990" height="819" alt="Screenshot 2026-04-21 135155" src="https://github.com/user-attachments/assets/b1219eb8-dc22-4cd3-b946-3f79067a5b07" />
+
+<img width="1088" height="865" alt="Screenshot 2026-04-21 135211" src="https://github.com/user-attachments/assets/99efd4d5-7838-4de2-afa7-398df74d64d0" />
+
+
+<img width="1093" height="860" alt="Screenshot 2026-04-21 135223" src="https://github.com/user-attachments/assets/ea0fd45a-6555-45e3-98dc-50ea01fc5bec" />
+
+
+<img width="1105" height="882" alt="Screenshot 2026-04-21 135233" src="https://github.com/user-attachments/assets/64f59b9b-b86f-4c6f-922c-6dd3f385451c" />
+
+
+
 
 
 ## Experiment 1B:
